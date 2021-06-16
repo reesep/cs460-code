@@ -1,12 +1,13 @@
+CC     =  gcc
+CFLAGS = -Wall -pedantic -std=c11 -ggdb #-save-temps
 TARGET = sll
 SRC    =  $(TARGET).c
 OBJ    =  $(TARGET).o
-CC     =  gcc
-CFLAGS = -g3 -W -Wall -std=c99
-
-$(TARGET): $(OBJS)
 
 .PHONY: clean
+
+$(TARGET): $(OBJS)
+	$(CC) $(CFLAGS) $(SRC) -o $@
 
 clean:
 	$(RM) $(TARGET) $(OBJS)

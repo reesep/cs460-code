@@ -1,5 +1,5 @@
 CC     =  gcc
-CFLAGS = -g3 -W -Wall -std=c99 -ggdb
+CFLAGS = -Wall -pedantic -std=c11 -ggdb -save-temps
 TARGET = hello_world
 SRC    =  $(TARGET).c
 OBJ    =  $(TARGET).o
@@ -10,4 +10,4 @@ $(TARGET): $(OBJS)
 	$(CC) $(CFLAGS) $(SRC) -o $@
 
 clean:
-	$(RM) $(TARGET) $(OBJS)
+	$(RM) $(TARGET) $(OBJS) *.i *.s
